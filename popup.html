@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+    <h1>Password Generator</h1>
+    </header>
+    <main class="password-generator">
+
+      <section class="password-display">
+        <input type="text" id=password-text-area name="password-text-area"></input>
+      </section>
+
+      <section class="password-length">
+        <p>Password Length:</p>
+        <input type="text" id=password-length-updater name="password-length-updater"></input>
+        <button type="button" onclick="generatePassword()">Generate Password</button>
+
+      </section>
+
+      <section class="characters-used">
+        <p>Characters used:</p>
+        <input type="checkbox" id="capitals" name="upper-case" value="1">ABC</input>
+        <input type="checkbox" id="lowercase" name="lower-case" value="2">abc</input>
+        <input type="checkbox" id="numbers" name="numbers" value="3">123</input>
+        <input type="checkbox" id="symbols" name="symbols" value="4">$#&</input>
+
+
+      </section>
+    </main>
+
+	  <script type="text/javascript" src="background.js"></script>
+  </body>
+</html>
