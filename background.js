@@ -2,7 +2,7 @@
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 const numbers = "0123456789";
-const symbols = "!@#$%^&*()_-+={[}]|;'<>?/";
+const symbols = "!@#$%^&*()_-+={[}]|;<>?/";
 
 var generate_button = document.getElementById("generate-button")
 generate_button.addEventListener('click', function(){ generatePassword()}, false);

@@ -1,9 +1,100 @@
 body {
+    text-transform: uppercase;
+    transition-duration:0.7;
     background-color: #FFA9A9;
-    width: 260px;
+    width: 280px;
+    .password-display {
+        input {
+            border-style:hidden;
+            width:275px;
+            font-size: 2em;
+            text-align: center;
+
+        }
+  
+
+    }
+    .password-length {
+        input[type="range"]{
+            -webkit-appearance:none;
+            width:275px;
+            height:20px;
+            background: linear-gradient(to right, #ffffffff 0%, #ffffffff 100%);
+            background-size:300px 10px;
+            background-position:center;
+            background-repeat:no-repeat;
+            overflow:hidden;
+            outline: none;
+          }
+          
+          
+          input[type="range"]::-webkit-slider-thumb{
+            -webkit-appearance:none;
+            width:20px;
+            height:20px;
+            background:#F26B5E;
+            position:relative;
+            z-index:3;
+            box-shadow:0 0 5px 0 rgba(0,0,0,0.3);
+          }
+          
+          input[type="range"]::-webkit-slider-thumb:after{
+            content:" ";
+            width:260px;
+            height:10px;
+            position:absolute;
+            z-index:1;
+            right:20px;
+            top:5px;
+            background: #ff5b32;
+            background: linear-gradient(to right, #f088fc 1%, #AC6CFF 70%);
+          }
+    }
+
     h1 {
     
-        color:#ffffff;
-        text-transform: uppercase;
+        color:#303030;
     }
+
+    #slider-value{
+        margin: 3px;
+        font-size: 2em;
+        display:inline-block;
+        position:relative;
+        left: 115px;
+        z-index: 1;
+        padding: 10px;
+    }
+
+    #generate-button{
+        margin-top: 3px;
+        width:100%;
+        text-transform: uppercase;
+        background-color: white; 
+        color: black; 
+        border: 2px solid #ffffff;
+        padding:16px 32px;
+        
+    }
+    #generate-button:hover{
+        background-color:#F26B5E;
+        color:white;
+    }
+
+    input[type="checkbox"]:focus{
+        outline:0;
+    }
+
+
+    .characters-used{
+        text-decoration: hidden;
+        display:flex;
+        justify-content: space-between;
+        font-size:20px;
+        outline:0;
+        overflow:hidden;
+
+    }
+          
+        
 }
