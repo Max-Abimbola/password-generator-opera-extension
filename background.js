@@ -10,6 +10,7 @@ slider_value.innerHTML = password_slider.value;
 
 password_slider.oninput = function(){
 	slider_value.innerHTML = this.value;
+	generatePassword();
 }
 
 function displayPassword(value){
