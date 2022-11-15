@@ -26,7 +26,7 @@ function getRandomInt(max){
 	return Math.floor(Math.random()*max)
 }
 
-function generatePassword(capitals,lower_case,numbers,symbols,password_length){
+function generatePassword(){
 
 	const password = ""
 
@@ -35,7 +35,19 @@ function generatePassword(capitals,lower_case,numbers,symbols,password_length){
 		let set = getRandomInt(3);
 		switch(set){
 			case 0:
+				var randnum = getRandomInt(len(letters));
+				password += letters[randnum];
+
+			case 1:
+				var randnum = getRandomInt(len(numbers));
+				password += numbers[randnum];
+
+			case 2:
+				var randnum = getRandomInt(len(symbols));
+				password += symbols[randnum];
 		}
 		let char =
 	}
+
+	console.log(password);
 }
