@@ -18,17 +18,18 @@
       </section>
 
       <section class="password-length">
-        <p>Password Length:</p>
-        <input type="text" id=password-length-updater name="password-length-updater"></input>
-        <button type="button" onclick="generatePassword(false,false,true,20)">Generate Password</button>
+        <p>Password Length:<span id="slider-value"></span></p>
+        <input type="range" min="8" max="20" id=password-length-updater></input>
+        <button type="button" onclick="generatePassword()">Generate Password</button>
+
 
       </section>
 
       <section class="characters-used">
         <p>Characters used:</p>
-        <input type="checkbox" id="letters_checkbox" name="letters_checkbox" value="true">AaBbCc</input>
-        <input type="checkbox" id="numbers_checkbox" name="numbers_checkbox" value="true">123</input>
-        <input type="checkbox" id="symbols_checkbox" name="symbols_checkbox" value="true">$#&</input>
+        <input type="checkbox" id="letters_checkbox" name="letters_checkbox" value="false">AaBbCc</input>
+        <input type="checkbox" id="numbers_checkbox" name="numbers_checkbox" value="false">123</input>
+        <input type="checkbox" id="symbols_checkbox" name="symbols_checkbox" value="false">$#&</input>
 
 
       </section>
