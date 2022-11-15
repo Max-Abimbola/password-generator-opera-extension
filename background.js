@@ -9,6 +9,10 @@ var incNumbers = false;
 var incSymbols = false;
 
 
+function getValues(){
+
+}
+
 function displayPassword(value){
 
 	var password_text_area = document.getElementById("password-text-area");
@@ -18,7 +22,7 @@ function displayPassword(value){
 
 function getRandomInt(max){
 	if(max == 1){
-		return 1
+		return 0
 	}
 	return Math.floor(Math.random()*max)
 }
