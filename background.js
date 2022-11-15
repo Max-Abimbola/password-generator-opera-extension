@@ -17,6 +17,9 @@ function displayPassword(value){
 }
 
 function getRandomInt(max){
+	if(max == 1){
+		return 1
+	}
 	return Math.floor(Math.random()*max)
 }
 
@@ -41,14 +44,28 @@ function generatePassword(incLetters,incNumbers,incSymbols,password_length){
 		available_characters.push("incSymbols");
 	}
 
-	console.log("available characters: "+available_characters)
+	console.log(available_characters)
+	console.log(available_characters.length)
 
-	for(i=0;i<password_length-1;i++){
+	for(i=0;i<password_length;i++){
+		console.log("i: "+i)
+		let set = getRandomInt(available_characters.length);
+		console.log(set)
 
-		let set = getRandomInt(available_characters.length-1);
-
-		console.log("available characters array:",available_characters[set]);
-
+		if(available_characters[set] == "incLetters"){
+			var randnum = getRandomInt(letters.length);
+			password += letters[randnum];			
+		}
+		else if(available_characters[set] == "incNumbers"){
+			var randnum = getRandomInt(numbers.length);
+			password += numbers[randnum];			
+		}
+		else if(available_characters[set] == "incSymbols"){
+			var randnum = getRandomInt(symbols.length);
+			password += symbols[randnum];			
+		}
+	}
+/*
 		switch(available_characters[set]){
 			case "incLetters":
 				var randnum = getRandomInt(letters.length);
@@ -63,7 +80,7 @@ function generatePassword(incLetters,incNumbers,incSymbols,password_length){
 				password += symbols[randnum]
 		}
 	}
-
-	console.log("password: "+password);
+*/
+	console.log("password: "+password,password.length);
 	displayPassword(password);
 };
