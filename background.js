@@ -2,11 +2,15 @@
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 const numbers = "0123456789";
-const symbols = "!@#$%^&*()_-+={[}]|\:;'<>?/";
+const symbols = "!@#$%^&*()_-+={[}]|;'<>?/";
+
+var generate_button = document.getElementById("generate-button")
+generate_button.addEventListener('click', function(){ generatePassword()}, false);
 
 var slider_value = document.getElementById("slider-value");
 var password_slider = document.getElementById("password-length-updater");
 slider_value.innerHTML = password_slider.value;
+generatePassword()
 
 password_slider.oninput = function(){
 	slider_value.innerHTML = this.value;
@@ -19,6 +23,7 @@ function displayPassword(value){
 	password_text_area.value = ""
 	password_text_area.value = value;
 }
+
 
 function getRandomInt(max){
 	if(max == 1){

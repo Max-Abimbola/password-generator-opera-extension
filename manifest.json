@@ -2,17 +2,24 @@
 	"manifest_version": 2,
 
 	"name": "Password Generator",
+	"content_scripts": [
+		{
+			"matches": ["http://www.google.com/*"],
+			"css": ["style.css"],
+			"js": ["background.js"]
+		}
+	],
 	"description": "An extension to generate a new strong password",
 	"version": "1.0",
 	"background": {
 		"scripts": ["background.js"]
 	},
 
-	"permissions": ["tabs"],
+	"permissions": ["tabs", "http://www.google.com/*","http://*.opera.com","contextMenus"],
 	"browser_action": {
 		"default_icon": "key-icon.png",
 		"default_popup": "popup.html",
-		"default_title": "My Sample Extension"
+		"default_title": "Password Generator"
 
 	}
 }
