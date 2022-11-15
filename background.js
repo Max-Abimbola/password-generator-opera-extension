@@ -4,50 +4,41 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 const numbers = "0123456789";
 const symbols = "~`!@#$%^&*()_-+={[}]|\:;'<,>.?/";
 
-chrome.browserAction.onClicked.addListener(function(){
-	console.log('This button was clicked!');
-});
 
-function checkURL(tabID, changeInfo, tab){
-	// If it satisfies the criteria (the URL containing 'www.opera.com')
-	if (tab.url.indexOf('www.opera.com') > -1) {
-		// Shows the page action
-		chrome.pageAction.show(tabID);
-	}
-}
-chrome.tabs.onUpdated.addListener(checkURL);
-
-function displayPassword(){
+function displayPassword(value){
 	var password_text_area = document.getElementById("password-text-area");
-	password_text_area.value = "Hello World";
+	password_text_area.value = value;
 }
 
 function getRandomInt(max){
 	return Math.floor(Math.random()*max)
 }
 
-function generatePassword(){
+function hello(){
+	console.log("hello");
+}
 
-	const password = ""
+function generatePassword(password_length){
 
+	var password = "";
 
 	for(i=0;i<password_length;i++){
-		let set = getRandomInt(3);
+		let set = getRandomInt(2);
 		switch(set){
 			case 0:
-				var randnum = getRandomInt(len(letters));
+				var randnum = getRandomInt(letters.length);
 				password += letters[randnum];
 
 			case 1:
-				var randnum = getRandomInt(len(numbers));
+				var randnum = getRandomInt(numbers.length);
 				password += numbers[randnum];
 
 			case 2:
-				var randnum = getRandomInt(len(symbols));
+				var randnum = getRandomInt(symbols.length);
 				password += symbols[randnum];
 		}
-		let char =
 	}
 
-	console.log(password);
-}
+	console.log("password: "+password);
+	displayPassword(password);
+};
