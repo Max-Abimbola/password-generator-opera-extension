@@ -2,15 +2,14 @@
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 const numbers = "0123456789";
-const symbols = "~`!@#$%^&*()_-+={[}]|\:;'<,>.?/";
+const symbols = "!@#$%^&*()_-+={[}]|\:;'<>?/";
 
-var incLetters = false;
-var incNumbers = false;
-var incSymbols = false;
+var slider_value = document.getElementById("slider-value");
+var password_slider = document.getElementById("password-length-updater");
+slider_value.innerHTML = password_slider.value;
 
-
-function getValues(){
-
+password_slider.oninput = function(){
+	slider_value.innerHTML = this.value;
 }
 
 function displayPassword(value){
@@ -31,9 +30,15 @@ function hello(){
 	console.log("hello");
 }
 
-function generatePassword(incLetters,incNumbers,incSymbols,password_length){
+function generatePassword(){
 
+	var incLetters = document.getElementById("letters_checkbox").checked;
+	var incNumbers = document.getElementById("numbers_checkbox").checked;
+	var incSymbols = document.getElementById("symbols_checkbox").checked;
+	var password_length = document.getElementById("password-length-updater").value;
 	var password = "";
+
+
 	console.log(`incLetters: ${incLetters} , incNumbers: ${incNumbers} , incSymbols: ${incSymbols}`);
 
 	available_characters = [];
