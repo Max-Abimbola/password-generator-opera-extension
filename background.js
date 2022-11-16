@@ -80,22 +80,6 @@ function generatePassword(){
 			password += symbols[randnum];			
 		}
 	}
-/*
-		switch(available_characters[set]){
-			case "incLetters":
-				var randnum = getRandomInt(letters.length);
-				password += letters[randnum];
-
-			case "incNumbers":
-				var randnum = getRandomInt(numbers.length);
-				password += numbers[randnum];
-
-			case "incSymbols":
-				var randnum = getRandomInt(symbols.length);
-				password += symbols[randnum]
-		}
-	}
-*/
 	console.log("password: "+password,password.length);
 	displayPassword(password);
 };
